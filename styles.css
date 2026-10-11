@@ -1,0 +1,65 @@
+/* Estilo general del cuerpo */
+body {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background-color: #f0f4f8;
+  margin: 0;
+  padding: 0;
+  color: #333;
+}
+
+/* Encabezado principal */
+header {
+  background-color: #0066cc;
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 2rem;
+}
+
+/* Barra de navegación */
+.navbar {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  background-color: #004080;
+  padding: 10px;
+}
+
+.navbar a {
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.navbar a:hover {
+  text-decoration: underline;
+  color: #ffcc00;
+}
+
+/* Tarjetas de contenido */
+.tarjeta-modulo {
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 20px;
+  margin: 15px;
+  flex: 1;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+
+.tarjeta-modulo:hover {
+  transform: translateY(-5px);
+}
+
+/* Contenedor flexible */
+.contenedor {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 20px;
+}
