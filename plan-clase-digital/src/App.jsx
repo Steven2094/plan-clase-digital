@@ -1,4 +1,6 @@
 // src/App.jsx
+import HeaderClase from './components/HeaderClase';
+import ObjetivosCard from './components/ObjetivosCard';
 import ActividadItem from './components/ActividadItem';
 
 function App() {
@@ -8,15 +10,22 @@ function App() {
   return (
     <div style={{ fontFamily: 'Segoe UI', padding: '30px', textAlign: 'center' }}>
       {/* Encabezado principal */}
-      <header style={{ background: '#002b49', color: 'white', padding: '20px', borderRadius: '8px' }}>
-        <h1>Plan de Clase Digital Interactivo</h1>
-        <p>Docente: {nombreProfesor} | Curso: {cursoActual}</p>
-      </header>
+      <HeaderClase
+        tituloTema="Programación de Aplicaciones Web"
+        nombreDocente={nombreProfesor}
+        horario="Viernes 8:00 - 10:00"
+      />
 
       {/* Mensaje de bienvenida */}
       <h2 style={{ marginTop: '20px', color: '#0f4c81' }}>
         ¡Bienvenidos al módulo de componentes en React!
       </h2>
+
+      {/* Bloque de metas */}
+      <ObjetivosCard
+        competencia="Desarrolla componentes modulares en React"
+        indicadorLogro="Implementa props y hooks para crear interfaces dinámicas"
+      />
 
       {/* Bloque de actividades */}
       <main style={{ marginTop: '20px' }}>
