@@ -1,49 +1,49 @@
-import { useState } from 'react';
+import { useState } from "react";
+import { motion } from "framer-motion";
 
-function ActividadItem({ titulo, tiempo, tipo }) {
-  const [completada, setCompletada] = useState(false);
+export default function ActividadItem({ titulo, tiempo }) {
+    const [completada, setCompletada] = useState(false);
 
-  return (
-    <div
-      style={{
-        border: '1px solid #cbd5e1',
-        padding: '15px',
-        borderRadius: '8px',
-        marginBottom: '10px',
-        background: completada ? '#d4edda' : '#f8fafc',
-      }}
-    >
-      <span
-        style={{
-          background: '#0ea5e9',
-          color: 'white',
-          padding: '2px 8px',
-          borderRadius: '4px',
-          fontSize: '0.8em',
-        }}
-      >
-        {tipo}
-      </span>
-      <h4 style={{ margin: '8px 0 4px 0', color: '#0f172a' }}>{titulo}</h4>
-      <p style={{ margin: 0, fontSize: '0.85em', color: '#64748b' }}>
-        Duración: {tiempo}
-      </p>
-      <button
-        onClick={() => setCompletada(!completada)}
-        style={{
-          marginTop: '10px',
-          padding: '6px 12px',
-          border: 'none',
-          borderRadius: '4px',
-          backgroundColor: completada ? '#198754' : '#dc3545',
-          color: 'white',
-          cursor: 'pointer',
-        }}
-      >
-        {completada ? 'Marcar como pendiente' : 'Marcar como completada'}
-      </button>
-    </div>
-  );
+    return (
+        <motion.div 
+            layout
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
+            style={{ 
+                background: completada ? '#e8f5e9' : '#f8fafc', 
+                border: '1px solid #cbd5e1', 
+                padding: '12px 18px', 
+                borderRadius: '6px', 
+                display: 'flex', 
+                justifyContent: 'space-between', 
+                alignItems: 'center',
+                marginBottom: '10px'
+            }}
+        >
+            <span style={{ 
+                textDecoration: completada ? 'line-through' : 'none',
+                color: completada ? '#2e7d32' : '#334155',
+                fontWeight: completada ? 'normal' : '600'
+            }}>
+                {titulo} ({tiempo})
+            </span>
+
+            <motion.button 
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.9 }}
+                onClick={() => setCompletada(!completada)}
+                style={{
+                    background: completada ? '#2e7d32' : '#0f4c81',
+                    color: 'white',
+                    border: 'none',
+                    padding: '6px 12px',
+                    borderRadius: '4px',
+                    cursor: 'pointer',
+                    fontSize: '0.85em'
+                }}
+            >
+                {completada ? "✓ Listo" : "Marcar avance"}
+            </motion.button>
+        </motion.div>
+    );
 }
-
-export default ActividadItem;
