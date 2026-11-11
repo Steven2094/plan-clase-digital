@@ -2,6 +2,7 @@
 import HeaderClase from './components/HeaderClase';
 import ObjetivosCard from './components/ObjetivosCard';
 import ActividadItem from './components/ActividadItem';
+import ListaActividades from './components/ListaActividades';
 
 function App() {
   const nombreProfesor = "Ing. Kevin Brolo";
@@ -34,6 +35,12 @@ function App() {
         <ActividadItem titulo="Taller Guiado de Componentes" tiempo="25 minutos" tipo="Construcción" />
         <ActividadItem titulo="Pruebas de Estado con useState" tiempo="25 minutos" tipo="Aplicación" />
       </main>
+      {/* Lista de actividades desde NocoDB */}
+      <section style={{ maxWidth: '800px', margin: '40px auto', fontFamily: 'Segoe UI, sans-serif'}}>
+          <h1>Plan de Clase Digital Interactivo</h1>
+          <p>Bienvenido al puente entre Frontend (React) y Backend (NocoDB).</p>
+        <ListaActividades />
+      </section>
     </div>
   );
 }
